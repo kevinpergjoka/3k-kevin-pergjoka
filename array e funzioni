@@ -1,0 +1,31 @@
+#include <iostream>
+#define MAX 20
+using namespace std;
+void stampa_vettore(int v[ ], int dim){
+/*cosa fa il programma in questo ciclo?*/
+cout<<"Il vettore contiene: (";
+for(int i=0; i<dim; i++){
+cout<<v[i]<<"; ";
+}
+cout<<"\b\b)";
+}
+int main(){
+unsigned int n=5;
+int box, B[ ] = {7, 1, 2, 6, 4};
+
+/*cosa fa il programma in questo ciclo?*/
+for (int j=0; j<n; j++){
+for (int k=0; k<n; k++){
+if(B[k]<B[j]){
+box=B[j];
+B[j]=B[k];
+B[k]=box;
+}
+}
+cout<<"\n"<<"Alla iterazione "<<j<<" "<<"\n";
+stampa_vettore(B,n);
+}
+cout<<"\n"<<"Finito: "<<"\n";
+stampa_vettore(B,n);
+return 0;
+}
